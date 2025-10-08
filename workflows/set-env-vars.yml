@@ -1,0 +1,37 @@
+name: Set Environment Variables
+on:
+  workflow_call:
+    outputs:
+      env_name:
+        value: ${{ jobs.set-env.outputs.env_name }}
+      suffix:
+        value: ${{ jobs.set-env.outputs.suffix }}
+
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    outputs:
+      env_name: ${{ steps.set_env.outputs.env_name }}
+      suffix: ${{ steps.set_env.outputs.suffix }}
+    steps:
+      - name: Extract branch name
+        id: extract_branch
+        run: echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+      - name: Define environment and suffix
+        id: set_env
+        run: |
+          BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
+          if [[ "$BRANCH_NAME" == "dev" ]]; then
+            echo "env_name=dev" >> $GITHUB_OUTPUT
+            echo "suffix=_dev" >> $GITHUB_OUTPUT
+          elif [[ "$BRANCH_NAME" == release/* ]]; then
+            echo "env_name=qa" >> $GITHUB_OUTPUT
+            echo "suffix=_qa" >> $GITHUB_OUTPUT
+          elif [[ "$BRANCH_NAME" == "master" ]]; then
+            echo "env_name=prd" >> $GITHUB_OUTPUT
+            echo "suffix=_prd" >> $GITHUB_OUTPUT
+          else
+            echo "Unknown branch $BRANCH_NAME. Skipping deploy."
+            exit 1
+          fi
+
