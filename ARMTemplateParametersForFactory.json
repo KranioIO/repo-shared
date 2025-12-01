@@ -1,0 +1,73 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-mini-projet-dev"
+		},
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"ORA_SASDDSD_DEV_password": {
+			"value": ""
+		},
+		"ls_co01isilon_data_analitica_password": {
+			"value": ""
+		},
+		"ls_oracle_dbomasdev_password": {
+			"value": ""
+		},
+		"AzureSqlDatabaseConn_properties_parameters_fullyQualifiedDominNameAzureSQLCICD_defaultValue": {
+			"value": "sql-server-cicd-dev-jr.database.windows.net"
+		},
+		"AzureSqlDatabaseConn_properties_parameters_databaseNameSQLCICD_defaultValue": {
+			"value": "sql-cicd-dev-jr"
+		},
+		"K_AzureDatabriks_dev_placeholder_properties_parameters_keyVaultLinkedServiceName_defaultValue": {
+			"value": "kv_mini_projet_adf_linked"
+		},
+		"K_AzureDatabriks_dev_placeholder_properties_parameters_secretName_defaultValue": {
+			"value": "databricks-pat"
+		},
+		"K_AzureDatabriks_dev_placeholder_properties_parameters_clusterId_defaultValue": {
+			"value": "1010-091434-nqc7ex96"
+		},
+		"K_AzureDatabriks_dev_placeholder_properties_parameters_databricksDomain_defaultValue": {
+			"value": "https://adb-1194260751860413.13.azuredatabricks.net/"
+		},
+		"K_AzureDatabriks_dev_placeholder_properties_parameters_secretVersion_defaultValue": {
+			"value": "b786f7a6696e451babba51fb6c0ea7d4"
+		},
+		"kv_mini_projet_adf_linked_properties_parameters_keyVaultBaseUrl_defaultValue": {
+			"value": "https://kv-mini-projet-adf.vault.azure.net/"
+		},
+		"pep-adf-dlsdaconfdev01_properties_privateLinkResourceId": {
+			"value": "/subscriptions/fe8afbab-2534-47dd-9884-fb60350daf6d/resourceGroups/rg-DataStorage-dev-eu2-01/providers/Microsoft.Storage/storageAccounts/dlsdaconfdev01"
+		},
+		"pep-adf-dlsdaconfdev01_properties_groupId": {
+			"value": "dfs"
+		},
+		"pep-adf-dlsdaconfdev01_properties_fqdns": {
+			"value": [
+				"dlsdaconfdev01.dfs.core.windows.net"
+			]
+		},
+		"pep-dbw-dataingestion-dev_properties_privateLinkResourceId": {
+			"value": "/subscriptions/fe8afbab-2534-47dd-9884-fb60350daf6d/resourceGroups/rg-DataIngestion-dev-eu2/providers/Microsoft.Databricks/workspaces/dbw-bpdanalytic-dev-eu2-01"
+		},
+		"pep-dbw-dataingestion-dev_properties_groupId": {
+			"value": "databricks_ui_api"
+		},
+		"pep-dbw-dataingestion-dev_properties_fqdns": {
+			"value": [
+				"adb-3038639577382291.11.azuredatabricks.net"
+			]
+		},
+		"default_properties_notebookPath_value": {
+			"value": "adb-mini-projet/dev/files/test"
+		},
+		"default_properties_esteEsUnParametroGLobal_value": {
+			"value": "test desde dev"
+		}
+	}
+}
