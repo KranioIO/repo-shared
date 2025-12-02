@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"factoryName": {
-			"value": "adf-mini-projet-dev"
+			"value": "adf-mini-projet-prd"
 		},
 		"AzureDataLakeStorage_accountKey": {
 			"value": ""
@@ -27,7 +27,7 @@
 			"value": "kv_mini_projet_adf_linked"
 		},
 		"K_AzureDatabriks_dev_placeholder_properties_parameters_secretName_defaultValue": {
-			"value": "databricks-pat"
+			"value": "databricks-pat-prd"
 		},
 		"K_AzureDatabriks_dev_placeholder_properties_parameters_clusterId_defaultValue": {
 			"value": "1010-091434-nqc7ex96"
