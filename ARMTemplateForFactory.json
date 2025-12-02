@@ -5,7 +5,7 @@
 		"factoryName": {
 			"type": "string",
 			"metadata": "Data Factory name",
-			"defaultValue": "adf-mini-projet-qa"
+			"defaultValue": "adf-mini-projet-dev"
 		},
 		"AzureDataLakeStorage_accountKey": {
 			"type": "secureString",
