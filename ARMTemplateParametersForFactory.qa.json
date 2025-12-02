@@ -27,7 +27,7 @@
 			"value": "kv_mini_projet_adf_linked"
 		},
 		"K_AzureDatabriks_dev_placeholder_properties_parameters_secretName_defaultValue": {
-			"value": "databricks-pat-qa"
+			"value": "databricks-pat-qa-repo-config"
 		},
 		"K_AzureDatabriks_dev_placeholder_properties_parameters_clusterId_defaultValue": {
 			"value": "1010-091434-nqc7ex96"
@@ -64,10 +64,10 @@
 			]
 		},
 		"default_properties_notebookPath_value": {
-			"value": "adb-mini-projet/dev/files/test"
+			"value": "adb-mini-projet/qa/repo-config/test"
 		},
 		"default_properties_esteEsUnParametroGLobal_value": {
-			"value": "test desde dev"
+			"value": "test desde qa repo config"
 		}
 	}
 }
