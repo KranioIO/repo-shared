@@ -1,0 +1,38 @@
+name: Deploy ADF from repo-config
+
+on:
+  push:
+    branches:
+      - "qa"
+      - "prd"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repo-config (current branch dev/qa/prd)
+      - name: Checkout repo-config
+        uses: actions/checkout@v4
+
+      # 2️⃣ Login Azure via OIDC
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # 3️⃣ Deploy based on branch
+      - name: Deploy ADF
+        uses: Azure/data-factory-deploy-action@v1.2.0
+        with:
+          resourceGroupName: ${{ github.ref == 'refs/heads/qa' && rg-adf-qa|| rg-adf-prd }}
+          dataFactoryName: ${{ github.ref == 'refs/heads/qa' && secrets.adf-mini-projet-qa || adf-mini-projet-prd}}
+          armTemplateFile: ./ARMTemplateForFactory.json
+          armTemplateParametersFile: ./ARMTemplateParametersForFactory.json
+
