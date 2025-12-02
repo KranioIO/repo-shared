@@ -31,8 +31,8 @@ jobs:
       - name: Deploy ADF
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
-          resourceGroupName: ${{ github.ref == 'refs/heads/qa' && rg-adf-qa|| rg-adf-prd }}
-          dataFactoryName: ${{ github.ref == 'refs/heads/qa' && secrets.adf-mini-projet-qa || adf-mini-projet-prd}}
+          resourceGroupName: ${{ github.ref == 'refs/heads/qa' && secrets.ADF_QA_RESOURCE_GROUP || secrets.ADF_PRD_RESOURCE_GROUP }}
+          dataFactoryName: ${{ github.ref == 'refs/heads/qa' && secrets.ADF_QA_FACTORY_NAME || secrets.ADF_PRD_FACTORY_NAMED }}
           armTemplateFile: ./ARMTemplateForFactory.json
           armTemplateParametersFile: ./ARMTemplateParametersForFactory.json
 
